@@ -22,6 +22,7 @@ export const authOptions = {
         },
         async signIn({ profile }) {
             try {
+                console.log({ profile })
                 await connectToDB()
                 // Check if user already exists
                 const userExists = await User.findOne({
@@ -35,7 +36,7 @@ export const authOptions = {
                         username: profile.name
                             .replace(' ', '')
                             .toLocaleLowerCase(),
-                        image: profile.image,
+                        image: profile.picture,
                     })
                 }
 

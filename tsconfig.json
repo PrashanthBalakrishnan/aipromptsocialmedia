@@ -33,7 +33,12 @@
         "app/api/auth/[...nextauth]/route.js",
         "models/prompt.js",
         "app/create-prompt/page.jsx",
-        "components/Form.jsx"
+        "components/Form.jsx",
+        "components/PromptCard.jsx",
+        "app/profile/page.jsx",
+        "components/Profile.jsx",
+        "components/Feed.jsx",
+        "app/update-prompt/page.jsx"
     ],
     "exclude": ["node_modules"]
 }
