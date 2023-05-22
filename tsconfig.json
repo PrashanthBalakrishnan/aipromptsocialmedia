@@ -28,9 +28,12 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts",
-        "components/Nav.tsx",
+        "components/Nav.jsx",
         "models/user.ts",
-        "app/api/auth/[...nextauth]/route.ts"
+        "app/api/auth/[...nextauth]/route.js",
+        "models/prompt.js",
+        "app/create-prompt/page.jsx",
+        "components/Form.jsx"
     ],
     "exclude": ["node_modules"]
 }

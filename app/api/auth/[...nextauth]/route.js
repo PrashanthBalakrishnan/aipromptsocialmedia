@@ -1,9 +1,9 @@
 import NextAuth, { AuthOptions } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
-import { ConnectToDB } from '@/utils/database'
-import User from '@/models/user'
+import { connectToDB } from '@utils/database'
+import User from '@models/user'
 
-export const authOptions: AuthOptions = {
+export const authOptions = {
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_ID,
@@ -22,7 +22,7 @@ export const authOptions: AuthOptions = {
         },
         async signIn({ profile }) {
             try {
-                await ConnectToDB()
+                await connectToDB()
                 // Check if user already exists
                 const userExists = await User.findOne({
                     email: profile.email,
