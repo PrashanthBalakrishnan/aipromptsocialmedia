@@ -29,7 +29,7 @@
         "**/*.tsx",
         ".next/types/**/*.ts",
         "components/Nav.jsx",
-        "models/user.ts",
+        "models/user.js",
         "app/api/auth/[...nextauth]/route.js",
         "models/prompt.js",
         "app/create-prompt/page.jsx",
