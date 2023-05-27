@@ -10,11 +10,7 @@ export const metadata = {
     description: 'Share and Save your Prompts',
 }
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode
-}) {
+export default function RootLayout() {
     return (
         <html lang="en">
             <body className={inter.className}>
