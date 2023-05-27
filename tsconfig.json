@@ -39,7 +39,9 @@
         "components/Profile.jsx",
         "components/Feed.jsx",
         "app/update-prompt/page.jsx",
-        "app/layout.jsx"
+        "app/layout.jsx",
+        "components/Provider.jsx",
+        "app/page.jsx"
     ],
     "exclude": ["node_modules"]
 }
