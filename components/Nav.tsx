@@ -8,7 +8,7 @@ const Nav = () => {
     const [providers, setProviders] = useState(null)
     const [toggleDropdown, setToggleDropdown] = useState(false)
     const { data: session } = useSession()
-
+    console.log(Object.values(providers))
     useEffect(() => {
         const setUpProviders = async () => {
             const response = await getProviders()
@@ -39,7 +39,9 @@ const Nav = () => {
                         </Link>
                         <button
                             type="button"
-                            onClick={signOut}
+                            onClick={() => {
+                                signOut()
+                            }}
                             className="outline_btn"
                         >
                             Sign Out
@@ -61,8 +63,8 @@ const Nav = () => {
                             Object.values(providers).map((provider) => (
                                 <button
                                     type="button"
-                                    key={provider.name}
-                                    onClick={() => signIn(provider.id)}
+                                    key={provider?.name}
+                                    onClick={() => signIn(provider?.id)}
                                     className="black_btn"
                                 >
                                     Sign In
