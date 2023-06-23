@@ -1,4 +1,5 @@
 import Nav from '@components/Nav'
+import AuthContext from '@components/Provider'
 import Provider from '@components/Provider'
 import '@styles/global.css'
 import { Inter } from 'next/font/google'
@@ -18,12 +19,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <Provider>
+                <AuthContext>
                     <main className="app">
                         <Nav />
                         {children}
                     </main>
-                </Provider>
+                </AuthContext>
             </body>
         </html>
     )
