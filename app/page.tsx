@@ -1,20 +1,20 @@
-import Feed from '@/components/Feed'
-const Home = () => {
+import Feed from '@components/Feed'
+
+export default function Home() {
     return (
         <section className="w-full flex-center flex-col">
             <h1 className="head_text text-center">
+                Discover & Share
                 <br className="max-md:hidden" />
-                <span className="black_gradient text-center">
-                    Share and Discover AI Prompts
+                <span className="orange_gradient text-center">
+                    AI-Powered Prompts
                 </span>
             </h1>
             <p className="desc text-center">
-                AI Promps allow you to share and discover new prompts to use for
-                ChatGPT
+                AI Prompts is a open soruce tool to share and learn new prompts
+                for ChatGPT.
             </p>
-
             <Feed />
         </section>
     )
 }
-export default Home

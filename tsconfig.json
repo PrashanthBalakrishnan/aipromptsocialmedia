@@ -23,25 +23,6 @@
             "@*": ["./*"]
         }
     },
-    "include": [
-        "next-env.d.ts",
-        "**/*.ts",
-        "**/*.tsx",
-        ".next/types/**/*.ts",
-        "components/Nav.jsx",
-        "models/user.js",
-        "app/api/auth/[...nextauth]/route.js",
-        "models/prompt.js",
-        "app/create-prompt/page.jsx",
-        "components/Form.jsx",
-        "components/PromptCard.jsx",
-        "app/profile/page.jsx",
-        "components/Profile.jsx",
-        "components/Feed.jsx",
-        "app/update-prompt/page.jsx",
-        "app/layout.jsx",
-        "components/Provider.jsx",
-        "app/page.jsx"
-    ],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
     "exclude": ["node_modules"]
 }

@@ -1,21 +1,17 @@
 'use client'
-
-import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
-import { BsRobot } from 'react-icons/bs'
+import Link from 'next/link'
 import Image from 'next/image'
+import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
+
 const Nav = () => {
-    const { data: session } = useSession()
-
     const [providers, setProviders] = useState(null)
-
-    const [toggleDropDown, setToggleDropDown] = useState(false)
+    const [toggleDropdown, setToggleDropdown] = useState(false)
+    const { data: session } = useSession()
 
     useEffect(() => {
         const setUpProviders = async () => {
             const response = await getProviders()
-
             setProviders(response)
         }
         setUpProviders()
@@ -24,8 +20,14 @@ const Nav = () => {
     return (
         <nav className="flex-between w-full mb-16 pt-3">
             <Link href="/" className="flex gap-2 flex-center">
-                <BsRobot size={35} aria-label="site icon of a robot" />
-                <p className="logo_text black_gradient">A.I Prompts</p>
+                <Image
+                    src="/images/logo.svg"
+                    width={50}
+                    height={50}
+                    alt="AI PROMPT LOGO"
+                    className="object-contain"
+                />
+                <p className="logo_text">AI Prompts</p>
             </Link>
 
             {/* Desktop Navigation */}
@@ -35,7 +37,6 @@ const Nav = () => {
                         <Link href="/create-prompt" className="black_btn">
                             Create Post
                         </Link>
-
                         <button
                             type="button"
                             onClick={signOut}
@@ -50,7 +51,7 @@ const Nav = () => {
                                 width={37}
                                 height={37}
                                 className="rounded-full"
-                                aria-label="Profile Picture"
+                                alt="Profile"
                             />
                         </Link>
                     </div>
@@ -64,46 +65,46 @@ const Nav = () => {
                                     onClick={() => signIn(provider.id)}
                                     className="black_btn"
                                 >
-                                    Sign in
+                                    Sign In
                                 </button>
                             ))}
                     </>
                 )}
             </div>
-            {/* Mobile Nav */}
+
+            {/* Mobile Navigation */}
 
             <div className="sm:hidden flex relative">
                 {session?.user ? (
                     <div className="flex">
-                        {' '}
                         <Image
                             src={session?.user?.image}
                             width={37}
                             height={37}
                             className="rounded-full"
-                            aria-label="Profile Picture"
-                            onClick={() => setToggleDropDown((prev) => !prev)}
+                            alt="Profile"
+                            onClick={() => setToggleDropdown((prev) => !prev)}
                         />
-                        {toggleDropDown && (
+                        {toggleDropdown && (
                             <div className="dropdown">
                                 <Link
                                     href="/profile"
                                     className="dropdown_link"
-                                    onClick={() => setToggleDropDown(false)}
+                                    onClick={() => setToggleDropdown(false)}
                                 >
                                     My Profile
                                 </Link>
                                 <Link
                                     href="/create-prompt"
                                     className="dropdown_link"
-                                    onClick={() => setToggleDropDown(false)}
+                                    onClick={() => setToggleDropdown(false)}
                                 >
                                     Create Prompt
                                 </Link>
                                 <button
                                     type="button"
                                     onClick={() => {
-                                        setToggleDropDown(false)
+                                        setToggleDropdown(false)
                                         signOut()
                                     }}
                                     className="mt-5 w-full black_btn"
@@ -123,7 +124,7 @@ const Nav = () => {
                                     onClick={() => signIn(provider.id)}
                                     className="black_btn"
                                 >
-                                    Sign in
+                                    Sign In
                                 </button>
                             ))}
                     </>

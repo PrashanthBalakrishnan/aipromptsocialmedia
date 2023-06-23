@@ -1,4 +1,4 @@
-import Nav from '@components/Nav.jsx'
+import Nav from '@components/Nav'
 import Provider from '@components/Provider'
 import '@styles/global.css'
 import { Inter } from 'next/font/google'
@@ -6,18 +6,19 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-    title: 'AI Prompts with ChatGPT',
-    description: 'Share and Save your Prompts',
+    title: 'AI prompts',
+    description: 'Social media space for AI Prompts for ChatGPT',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+    children,
+}: {
+    children: React.ReactNode
+}) {
     return (
         <html lang="en">
             <body className={inter.className}>
                 <Provider>
-                    <div className="main">
-                        <div className="gradient" />
-                    </div>
                     <main className="app">
                         <Nav />
                         {children}
